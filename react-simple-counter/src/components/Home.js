@@ -8,10 +8,13 @@ function Home() {
             <h1 className="max-w-md mx-auto text-center text-2xl font-bold">React Simple Counter Application</h1>
             <div className='max-w-md mx-auto mt-10 space-y-5'>
                 <Counter/>
+                <Counter/>
+                <Counter/>
+
             </div>
         </div>
     </>
   )
 }
 
-export default Home
+export default Home;
