@@ -10,7 +10,6 @@ function Home() {
                 <Counter/>
                 <Counter/>
                 <Counter/>
-
             </div>
         </div>
     </>
