@@ -6,7 +6,7 @@ const decrementEl = document.getElementById("decrement");
 //TODO: =====>Initial State define of Counter View
 let count = 0;
 
-// ?=====> Event Listner
+//=====> Event Listner
 incrementEl.addEventListener("click", ()=>{
     count++; //incrementing based on click
     counterEl.innerText=count;
