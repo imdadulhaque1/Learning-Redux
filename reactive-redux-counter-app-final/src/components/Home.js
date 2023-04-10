@@ -1,5 +1,6 @@
 import React from "react";
-import Counter from "./Counter";
+// import Counter from "./Counter";
+import HooksCounter from "./HooksCounter";
 
 function Home() {
   return (
@@ -9,7 +10,7 @@ function Home() {
           React Simple Counter Application
         </h1>
         <div className="max-w-md mx-auto mt-10 space-y-5">
-          <Counter />
+          <HooksCounter id="7" />
         </div>
       </div>
     </>
