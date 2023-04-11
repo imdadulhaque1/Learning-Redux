@@ -1,6 +1,8 @@
 import React from "react";
+import DynamicHooksCounter from "./DynamicHooksCounter";
 // import Counter from "./Counter";
 import HooksCounter from "./HooksCounter";
+import VariableCounter from "./VariableCounter";
 
 function Home() {
   return (
@@ -10,7 +12,10 @@ function Home() {
           React Simple Counter Application
         </h1>
         <div className="max-w-md mx-auto mt-10 space-y-5">
-          <HooksCounter id="7" />
+          <HooksCounter />
+          <DynamicHooksCounter />
+          <VariableCounter />
+          <VariableCounter dynamic={true} />
         </div>
       </div>
     </>
