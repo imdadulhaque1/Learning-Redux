@@ -1,11 +1,20 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   decrementCreator,
   incrementCreator,
 } from "../redux/counter/actionCreator";
 
-const Counter = ({ count, increments, decrements }) => {
+const HooksCounter = () => {
+  const count = useSelector((state) => state.value);
+  const dispatch = useDispatch();
+  const incrementHandler = (value) => {
+    dispatch(incrementCreator(value));
+  };
+
+  const decrementHandler = (value) => {
+    dispatch(decrementCreator(value));
+  };
   return (
     <>
       <div className="max-w-md mx-auto mt-10 space-y-5">
@@ -14,13 +23,13 @@ const Counter = ({ count, increments, decrements }) => {
           <div className="flex  space-x-3">
             <button
               className="bg-indigo-400 text-white px-3 py-2 rounded shadow"
-              onClick={increments}
+              onClick={() => incrementHandler(5)}
             >
               Increment
             </button>
             <button
               className="bg-purple-400 text-white px-3 py-2 rounded shadow"
-              onClick={decrements}
+              onClick={() => decrementHandler(2)}
             >
               Decrement
             </button>
@@ -30,16 +39,5 @@ const Counter = ({ count, increments, decrements }) => {
     </>
   );
 };
-const mapStateToProps = (state) => {
-  return {
-    count: state.value,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    increments: (value) => dispatch(incrementCreator(value)),
-    decrements: (value) => dispatch(decrementCreator(value)),
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default HooksCounter;

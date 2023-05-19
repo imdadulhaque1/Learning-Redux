@@ -1,5 +1,5 @@
 import React from "react";
-import Counter from "./Counter";
+import HooksCounter from "./HooksCounter";
 
 function Home() {
   return (
@@ -9,9 +9,7 @@ function Home() {
           Reactive Redux Counter App
         </h1>
         <div className="max-w-md mx-auto mt-10 space-y-5">
-          <Counter />
-          <Counter />
-          <Counter />
+          <HooksCounter />
         </div>
       </div>
     </>
