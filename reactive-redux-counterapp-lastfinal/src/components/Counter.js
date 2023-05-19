@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { connect } from "react-redux";
+import {
+  decrementCreator,
+  incrementCreator,
+} from "../redux/counter/actionCreator";
 
-function Counter() {
-  const [count, setCount] = useState(0);
-  const increments = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-  const decrements = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
-
+const Counter = ({ count, increments, decrements }) => {
   return (
     <>
       <div className="max-w-md mx-auto mt-10 space-y-5">
-        <div className="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-lime-100 rounded shadow ">
+        <div className="p-4 h-auto flex flex-col items-center justify-center space-y-5 bg-zinc-300 rounded shadow ">
           <div className="text-2xl font-semibold">{count}</div>
           <div className="flex  space-x-3">
             <button
@@ -32,6 +29,17 @@ function Counter() {
       </div>
     </>
   );
-}
+};
+const mapStateToProps = (state) => {
+  return {
+    count: state.value,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    increments: (value) => dispatch(incrementCreator(value)),
+    decrements: (value) => dispatch(decrementCreator(value)),
+  };
+};
 
-export default Counter;
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
