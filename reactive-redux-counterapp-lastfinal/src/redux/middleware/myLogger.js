@@ -1,5 +1,6 @@
 import rootReducer from "../rootReducer";
 
+//TODO:  Create our Customed middleware
 const myLogger = (store) => (next) => (action) => {
   console.log(`Current Action: ${JSON.stringify(action)}`);
   console.log(`Before Action: ${JSON.stringify(store.getState())}`);
