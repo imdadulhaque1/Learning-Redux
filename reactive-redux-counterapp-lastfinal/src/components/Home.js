@@ -1,4 +1,5 @@
 import React from "react";
+import DynamicHooksCounter from "./DynamicHooksCounter";
 import HooksCounter from "./HooksCounter";
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
         </h1>
         <div className="max-w-md mx-auto mt-10 space-y-5">
           <HooksCounter />
+          <DynamicHooksCounter />
         </div>
       </div>
     </>
