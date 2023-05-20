@@ -1,15 +1,13 @@
 import { DECREMENT, INCREMENT } from "./actionTypes";
 
-export const incrementCreator = (value) => {
+export const incrementCreator = () => {
   return {
     type: INCREMENT,
-    payload: value,
   };
 };
 
-export const decrementCreator = (value) => {
+export const decrementCreator = () => {
   return {
     type: DECREMENT,
-    payload: value,
   };
 };
